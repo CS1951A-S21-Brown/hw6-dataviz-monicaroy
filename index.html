@@ -5,16 +5,19 @@
         <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
     </head>
 <body>
     <div class="header">
         <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
     </div>
-    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
+            <div class="horizontal-center">
+                <label for="num_genres">Number of Genres</label>
+                <input type="text" id="num_genres" name="num_genres" value="10">
+                <button type="button" onclick="setGenres()">Submit</button>
+            </div>
             <div id="graph1"></div>
             <div id="graph2"></div><br/>
         </div>
@@ -22,7 +25,99 @@
             <div id="graph3"></div>
         </div>
     </div>
-    <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="graph1.js"></script>
+    <script type="text/javascript" src="graph2.js"></script>
 </body>
 </html>
+
+<!-- Written Questions:
+
+1. The graph on the top left answers the first Netflix question, the one on the 
+   bottom left answers the second, and the one on the right adresses the third 
+   question (first option). 
+   
+   On the top left, I have a bar graph that displays the top genres on Netflix 
+   along with the number of titles in each genre. I have my interactive element 
+   here which is an input text box where the user can specify the number of 
+   genres they would like to see displayed. The original default value is 
+   10 genres. 
+   
+   The graph on the bottom left is a line graph that displays the change in the 
+   average runtime of movies. Here I include my tooltip. If you hover your mouse 
+   over one of the data points in the line graph, you can see both the year that 
+   point represents and the average runtime rounded to the nearest integer.
+
+   The graph on the right is another bar graph. It displays the top 10 most 
+   common director + actor pairings along with the count of the number of movies 
+   they made together.
+
+2. D3 was helpful to use for visualizations because:
+    1. The dynamic aspects of the visualization can allow the viewer to have 
+       some choice / control over what they see. For example, the text input for 
+       the number of genres allows the viewer to determine how many genres they 
+       are interested in learning about and they can look at multiple options. 
+
+    2. The dynamic aspects also enable the viewer to get more information out of 
+       the graph than they could if it were static. For example, the tooltip 
+       allowed for the viewer to get the specific information for each year in 
+       addition to seeing the overall trend in the line graph. Displaying 
+       specific information about every year, one way to convey the same amount 
+       of information statically would be much more overwhelming than dynamically 
+       choosing which year to show more information about based on the mouse 
+       location.
+
+    3. By being javascript-based, it was relatively easy to incorporate the 
+       visualizations into an online dashboard / website. If I had used another 
+       library that did not have the same integration abilities, it might have 
+       been necessary to re-create the image of each graph and change the one 
+       being displayed everytime I wanted to make a change. This would have been 
+       a more burdensome process.
+
+3. D3 would not be the most helpful tool for visualization if/when:
+    1. I do not want to present my visualizations online. I have not explored 
+       D3 extensively, but there does not seem to be a very easy way to save 
+       the graphs created as images if I wanted to make a poster or something 
+       else more offline.
+
+    2. I am interested in making a very simple, static graph. For a basic line 
+       graph with no interactive components, it seems like matplotlib or another 
+       similar library would be simpler to use code-wise since there is more 
+       built-in and less that a developer needs to specify. For example, in D3 
+       even x- and y- axes need to be defined from scratch while this is not the 
+       case in some other libraries.
+
+    3. I am very unfamiliar with JS, HTML, DOM etc and want to create a 
+       visualization quickly. Some parts of using D3 can be unintuitive at the 
+       beginning especially when unfamiliiar with front-end development tools 
+       and concepts. Thus, it can take some time to get familiar enough with D3 
+       to make visualizations. Depending on the time availiable, the time and 
+       effort to learn D3 might not make sense.
+
+4. Some users that might have some difficulty viewing and interacting with my 
+   dashboard would be people with colorblindness, blindness, and difficulty 
+   reading small text. Having blindness would make my dashboard almost 
+   completely inacessible as there are no audio components and everything is 
+   visual. Colorblindness, especially tritanopia (as mentioned in "A 
+   Comprehensive Guide to Accessible Data Visualization") would could cause some 
+   difficulty as the colors I use in my bar charts are all on a spectrum from 
+   green to blue. Difficulty reading small text may make it hard to understand 
+   the titles, axes, or numerical values displayed in my visualizations. Some 
+   actions I could take to make my dashboard more accessible would include 
+   changing the color scheme or providing several color scheme options the 
+   viewer could choose between, providing the ability for the viewer to control 
+   the font size, and including audio descriptions of the graphical 
+   visualizations.
+
+5. Most of the accessibility changes would have taken place in the last phase 
+   when I was deciding the styling of my visualizations (the color scheme and 
+   size of font used). The audio descriptions could also have been added then. 
+   I refrained from adding audio descriptions mainly because of the technical 
+   difficulty that comes along with them. Recording descriptions is not 
+   particularly difficult, but I was not sure how to incorporate them into the 
+   dashboard. In addition, including font size and color scheme options would 
+   have required some restructuring of my code. Since I previously treated these 
+   as static characteristics and would be switching them to dynamic, I would 
+   have to restructure some code in order to enable that.
+
+-->

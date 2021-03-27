@@ -9,4 +9,30 @@
     text-align: center;
 }
 
-/* Include any custom CSS styling here! */
+/* custom CSS styling here! */
+  
+  .horizontal-center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+.focus circle {
+    fill: steelblue;
+}
+
+.focus text {
+    font-size: 14px;
+}
+
+.tooltip {
+    fill: white;
+    stroke: #000;
+}
+
+.tooltip-year, .tooltip-time {
+    font-weight: bold;
+}
+

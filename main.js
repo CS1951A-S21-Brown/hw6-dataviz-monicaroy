@@ -65,7 +65,7 @@ let graph_3_width = MAX_WIDTH / 2, graph_3_height = 575;
             .append("text")
             .merge(counts)
             .attr("x", function(d) {return x(d.count) + 10})       
-            .attr("y", function(d) {return y(d.director + " + " + d.actor) + 10})       /
+            .attr("y", function(d) {return y(d.director + " + " + d.actor) + 10})      
             .style("text-anchor", "start")
             .text(function(d) {return d.count});           
 
